@@ -9,18 +9,18 @@ that URL for `base` in the examples.
 With the server executable in your working directory, run:
 
 ```sh
-SLIMEPROTO_BIND_ADDRESS=127.0.0.1:3000 ./slimeproto
+SLIMEPROTO_BIND_ADDRESS=127.0.0.1:2236 ./slimeproto
 ```
 
 This binds to localhost for the walkthrough. Without the environment variable, the
-server listens on `0.0.0.0:3000`. The default configuration allows registration and sets
+server listens on `0.0.0.0:2236`. The default configuration allows registration and sets
 storage and request limits.
 
 The server creates `data/slimeproto-identities-v1` on first startup. Paths are relative
 to the working directory. In another terminal:
 
 ```sh
-curl http://localhost:3000/
+curl http://localhost:2236/
 ```
 
 You should get `Hello, World!`.
@@ -31,7 +31,7 @@ These are local example credentials. Choose your own password for an account you
 keep. Registration returns the account ID but does not log you in.
 
 ```sh
-base=http://localhost:3000
+base=http://localhost:2236
 
 account_id=$(curl --fail-with-body -sS "$base/register" \
   -H 'Content-Type: application/json' \

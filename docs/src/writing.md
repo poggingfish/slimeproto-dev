@@ -3,7 +3,7 @@
 All POST actions below require a bearer token. For example:
 
 ```sh
-curl http://localhost:3000/spa \
+curl http://localhost:2236/spa \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer <token>' \
   -d '{"event":"create_collection","id":"Request1","data":{"name":"notes","listed":"true"}}'
@@ -79,7 +79,7 @@ creations have no sequence number.
 To retry a document creation safely, send an optional `Idempotency-Key` HTTP header:
 
 ```sh
-curl http://localhost:3000/spa \
+curl http://localhost:2236/spa \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer <token>' \
   -H 'Idempotency-Key: <unique-key-for-this-write>' \

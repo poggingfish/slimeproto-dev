@@ -3,7 +3,7 @@
 Connect to:
 
 ```text
-ws://localhost:3000/ws?token=<token>
+ws://localhost:2236/ws?token=<token>
 ```
 
 Use `wss://` when connecting through HTTPS. The token is checked during connection
@@ -105,7 +105,7 @@ Run this in a browser console to subscribe to the firehose and fetch new documen
 connections to that server; HTTPS pages need an HTTPS URL.
 
 ```js
-const base = new URL("http://localhost:3000");
+const base = new URL("http://localhost:2236");
 const token = "<token>";
 const socketUrl = new URL("/ws", base);
 socketUrl.protocol = base.protocol === "https:" ? "wss:" : "ws:";

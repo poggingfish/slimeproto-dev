@@ -140,8 +140,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .with_state(state);
 
     let bind_address =
-        std::env::var("SLIMEPROTO_BIND_ADDRESS").unwrap_or_else(|_| "0.0.0.0:3000".to_owned());
-    let listener = tokio::net::TcpListener::bind(bind_address).await?;
+        std::env::var("SLIMEPROTO_BIND_ADDRESS").unwrap_or_else(|_| "0.0.0.0:2236".to_owned());
+    let listener = tokio::net::TcpListener::bind(bind_address.clone()).await?;
+    println!("slimeproto now listening on {}", bind_address);
     axum::serve(
         listener,
         app.into_make_service_with_connect_info::<std::net::SocketAddr>(),

@@ -13,7 +13,7 @@ registration creates a new account, even if you reuse a password. Unknown fields
 including `username`, are rejected.
 
 ```sh
-curl http://localhost:3000/register \
+curl http://localhost:2236/register \
   -H 'Content-Type: application/json' \
   -d '{"password":"example-password"}'
 ```
@@ -34,7 +34,7 @@ Success: HTTP 201. Save the returned account ID for login:
 Log in with the account ID and password:
 
 ```sh
-curl http://localhost:3000/token \
+curl http://localhost:2236/token \
   -H 'Content-Type: application/json' \
   -d '{"account_id":"<account_id>","password":"example-password"}'
 ```
@@ -55,7 +55,7 @@ backup password. Both new account passwords and backup passwords follow registra
 length limits. The backup password may differ from the login password.
 
 ```sh
-curl http://localhost:3000/identity/export \
+curl http://localhost:2236/identity/export \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer <token>' \
   -d '{"password":"example-password","backup_password":"separate-backup-password"}'

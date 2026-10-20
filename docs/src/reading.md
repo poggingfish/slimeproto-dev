@@ -48,7 +48,7 @@ GET /spa?event=get_documents&id=Read2&documents=<uuid1>,<uuid2>
 Use URL encoding for query values, particularly names with spaces, `+`, or `&`:
 
 ```sh
-curl -G http://localhost:3000/spa \
+curl -G http://localhost:2236/spa \
   --data-urlencode 'event=get_collection_uuid' \
   --data-urlencode 'id=Lookup1' \
   --data-urlencode 'user=<account_id>' \

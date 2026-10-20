@@ -6,14 +6,14 @@ The server takes these environment variables:
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
-| `SLIMEPROTO_BIND_ADDRESS` | `0.0.0.0:3000` | Address and port to listen on |
+| `SLIMEPROTO_BIND_ADDRESS` | `0.0.0.0:2236` | Address and port to listen on |
 | `SLIMEPROTO_DATA_PATH` | `data/slimeproto-identities-v1` | LMDB database directory |
 | `SLIMEPROTO_CONFIG` | `slimeproto.json` | Path to the JSON configuration file |
 
 Relative paths use the process's working directory. For example:
 
 ```sh
-SLIMEPROTO_BIND_ADDRESS=127.0.0.1:3000 \
+SLIMEPROTO_BIND_ADDRESS=127.0.0.1:2236 \
 SLIMEPROTO_DATA_PATH=/srv/slimeproto/data \
 SLIMEPROTO_CONFIG=/etc/slimeproto/server.json \
 ./slimeproto
