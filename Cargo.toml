@@ -1,0 +1,27 @@
+[package]
+name = "slimeproto"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+argon2 = { version = "0.6", features = ["getrandom"] }
+axum = "0.8.9"
+heed = { version = "0.22", default-features = false }
+getrandom = "0.4"
+sha2 = "0.10"
+sockudo-ws = { version = "2", features = ["axum-integration"] }
+tokio = { version = "1.53.2", features = ["macros", "rt-multi-thread", "sync", "time"] }
+uuid = { version = "1", features = ["v7"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tower-http = {version = "0.7.1", features = ["cors"]}
+ed25519-dalek = "3.0.0"
+chacha20poly1305 = "0.11.0"
+zeroize = "1.9.1"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"

@@ -1,0 +1,8 @@
+{
+  "database_map_size_bytes": 1073741824,
+  "registration_keys": null,
+  "max_storage_per_user_bytes": 104857600,
+  "max_requests_per_minute_per_ip": 600,
+  "max_requests_per_minute_per_user": 300,
+  "trusted_proxy_ips": []
+}
